@@ -1,0 +1,102 @@
+.init-screen {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(54, 216, 255, 0.16), transparent 25%),
+    radial-gradient(circle at 22% 20%, rgba(255, 184, 77, 0.12), transparent 28%),
+    linear-gradient(145deg, #020712, #041424 54%, #020914);
+}
+
+.init-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(54, 216, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(54, 216, 255, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at center, black, transparent 72%);
+}
+
+.init-card {
+  position: relative;
+  width: min(430px, 100%);
+  overflow: hidden;
+  padding: 34px;
+  text-align: center;
+  background: rgba(4, 20, 36, 0.86);
+  border: 1px solid rgba(54, 216, 255, 0.32);
+  border-radius: 8px;
+  box-shadow: var(--shadow), var(--glow);
+  backdrop-filter: blur(20px);
+}
+
+.init-card::before {
+  content: '';
+  position: absolute;
+  inset: -34%;
+  background: conic-gradient(from 90deg, transparent, rgba(54, 216, 255, 0.16), transparent 36%, rgba(255, 184, 77, 0.12), transparent 64%);
+  animation: initSweep 18s linear infinite;
+}
+
+.init-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.init-logo {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  color: #04121e;
+  background: radial-gradient(circle, #f5feff, var(--blue));
+  border-radius: 50%;
+  box-shadow: 0 0 48px rgba(54, 216, 255, 0.68);
+}
+
+.init-card h1 {
+  color: var(--ink);
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.init-card > p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.init-steps {
+  margin-top: 26px;
+  display: grid;
+  gap: 10px;
+}
+
+.init-step {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 12px;
+  color: #dffaff;
+  background: rgba(2, 10, 20, 0.62);
+  border: 1px solid rgba(54, 216, 255, 0.18);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.init-step svg {
+  color: var(--green);
+}
+
+@keyframes initSweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
